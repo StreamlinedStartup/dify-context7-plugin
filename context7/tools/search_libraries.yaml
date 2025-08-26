@@ -1,0 +1,30 @@
+identity:
+  name: "search_libraries"
+  author: "vincent_termini"
+  label:
+    en_US: "Search Libraries"
+    zh_Hans: "搜索库"
+    pt_BR: "Pesquisar Bibliotecas"
+description:
+  human:
+    en_US: "Search for libraries and packages in the Context7 database to find documentation and code samples."
+    zh_Hans: "在 Context7 数据库中搜索库和包以查找文档和代码示例。"
+    pt_BR: "Pesquise bibliotecas e pacotes no banco de dados Context7 para encontrar documentação e amostras de código."
+  llm: "Search for libraries and packages in the Context7 database. Returns matching libraries with metadata including library IDs, descriptions, and availability of documentation."
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: "Search Query"
+      zh_Hans: "搜索查询"
+      pt_BR: "Consulta de Pesquisa"
+    human_description:
+      en_US: "The search term or library name to look for (e.g., 'react', 'tensorflow', 'nextjs')"
+      zh_Hans: "要查找的搜索词或库名称（例如 'react'、'tensorflow'、'nextjs'）"
+      pt_BR: "O termo de pesquisa ou nome da biblioteca a procurar (ex: 'react', 'tensorflow', 'nextjs')"
+    llm_description: "Search term or library name to find in the Context7 database. Can be partial matches or exact library names."
+    form: llm
+extra:
+  python:
+    source: tools/search_libraries.py

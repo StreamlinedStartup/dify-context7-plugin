@@ -1,0 +1,82 @@
+identity:
+  name: "get_documentation"
+  author: "vincent_termini"
+  label:
+    en_US: "Get Documentation"
+    zh_Hans: "获取文档"
+    pt_BR: "Obter Documentação"
+description:
+  human:
+    en_US: "Retrieve comprehensive documentation and code samples for a specific library from Context7."
+    zh_Hans: "从 Context7 检索特定库的全面文档和代码示例。"
+    pt_BR: "Recupere documentação abrangente e amostras de código para uma biblioteca específica do Context7."
+  llm: "Retrieve documentation, API references, and code samples for a specific library using its Context7 library ID. Supports filtering by topic and format options."
+parameters:
+  - name: library_id
+    type: string
+    required: true
+    label:
+      en_US: "Library ID"
+      zh_Hans: "库 ID"
+      pt_BR: "ID da Biblioteca"
+    human_description:
+      en_US: "The Context7 library ID (e.g., 'react', 'tensorflow/tensorflow', '/mongodb/docs')"
+      zh_Hans: "Context7 库 ID（例如 'react'、'tensorflow/tensorflow'、'/mongodb/docs'）"
+      pt_BR: "O ID da biblioteca Context7 (ex: 'react', 'tensorflow/tensorflow', '/mongodb/docs')"
+    llm_description: "The unique library identifier from Context7. Use the Search Libraries tool first to find the correct library ID."
+    form: llm
+  - name: format
+    type: select
+    required: false
+    default: "txt"
+    options:
+      - value: "txt"
+        label:
+          en_US: "Text"
+          zh_Hans: "文本"
+          pt_BR: "Texto"
+      - value: "json"
+        label:
+          en_US: "JSON"
+          zh_Hans: "JSON"
+          pt_BR: "JSON"
+    label:
+      en_US: "Format"
+      zh_Hans: "格式"
+      pt_BR: "Formato"
+    human_description:
+      en_US: "Output format for the documentation (text or JSON structure)"
+      zh_Hans: "文档输出格式（文本或 JSON 结构）"
+      pt_BR: "Formato de saída para a documentação (texto ou estrutura JSON)"
+    llm_description: "Format for the returned documentation. 'txt' provides clean text output, 'json' provides structured data."
+    form: form
+  - name: topic
+    type: string
+    required: false
+    label:
+      en_US: "Topic Filter"
+      zh_Hans: "主题过滤器"
+      pt_BR: "Filtro de Tópico"
+    human_description:
+      en_US: "Optional topic filter to focus on specific areas (e.g., 'hooks', 'routing', 'authentication')"
+      zh_Hans: "可选主题过滤器以专注于特定区域（例如 'hooks'、'routing'、'authentication'）"
+      pt_BR: "Filtro de tópico opcional para focar em áreas específicas (ex: 'hooks', 'routing', 'authentication')"
+    llm_description: "Optional topic filter to narrow down documentation to specific areas or features."
+    form: llm
+  - name: tokens
+    type: number
+    required: false
+    default: 10000
+    label:
+      en_US: "Token Limit"
+      zh_Hans: "令牌限制"
+      pt_BR: "Limite de Tokens"
+    human_description:
+      en_US: "Maximum number of tokens to retrieve (default: 10000, max: 50000)"
+      zh_Hans: "要检索的最大令牌数（默认：10000，最大：50000）"
+      pt_BR: "Número máximo de tokens a recuperar (padrão: 10000, máximo: 50000)"
+    llm_description: "Maximum number of tokens for the documentation response. Higher values provide more comprehensive documentation but use more resources."
+    form: form
+extra:
+  python:
+    source: tools/get_documentation.py

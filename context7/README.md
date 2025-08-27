@@ -15,7 +15,7 @@ The Context7 plugin brings the power of Context7's documentation search directly
 3. Start using the tools in your workflows!
 
 ## Get Your API Key
-Visit [Context7.com/api-keys](https://context7.com/api-keys) to get your free API key.
+Visit [Context7.com/dashboard](https://context7.com/dashboard) to get your free API key.
 
 ## Tools Included
 

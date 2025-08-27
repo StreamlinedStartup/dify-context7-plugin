@@ -1,17 +1,17 @@
 version: 0.0.1
 type: plugin
-author: StreamlinedStartup
+author: streamlinedstartup
 name: context7
 label:
-  en_US: context7
-  ja_JP: context7
-  zh_Hans: context7
-  pt_BR: context7
+  en_US: Context7
+  ja_JP: Context7
+  zh_Hans: Context7
+  pt_BR: Context7
 description:
   en_US: Copy the latest docs and code for any library — paste into Cursor, Claude, or other LLMs.
-  ja_JP: Copy the latest docs and code for any library — paste into Cursor, Claude, or other LLMs.
-  zh_Hans: Copy the latest docs and code for any library — paste into Cursor, Claude, or other LLMs.
-  pt_BR: Copy the latest docs and code for any library — paste into Cursor, Claude, or other LLMs.
+  ja_JP: 任意のライブラリの最新ドキュメントとコードをコピー — Cursor、Claude、または他のLLMに貼り付けます。
+  zh_Hans: 复制任何库的最新文档和代码 — 粘贴到 Cursor、Claude 或其他 LLM 中。
+  pt_BR: Copie os documentos e código mais recentes de qualquer biblioteca — cole no Cursor, Claude ou outros LLMs.
 icon: icon.svg
 icon_dark: icon-dark.svg
 resource:
